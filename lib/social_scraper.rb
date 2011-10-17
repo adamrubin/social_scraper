@@ -1,9 +1,9 @@
+require File.expand_path(File.join(File.dirname(__FILE__), 'social_scraper/scraper'))
+
 module SocialScraper
-  module ObjectExtensions
-    def scrape(url, options = {})
-      puts "HI, I'm in fetch"
-    end
+  extend self
+  
+  def new(url)
+    Scraper.new(url)
   end
 end
-
-::Object.send(:include, ::SocialScraper::ObjectExtensions) unless ::Object.method_defined?(:srape)
